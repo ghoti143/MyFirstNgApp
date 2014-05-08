@@ -227,12 +227,10 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 
 ## 9) Et cetera
 
-* Here's the [complete application]
-* You can [run it] in your browser
+* Want to [run it] in your browser?
 
 [AngularJS Module Guide]: https://docs.angularjs.org/guide/module
 [Semantic Versioning]: http://semver.org/
 [W3C spec]: http://www.w3.org/html/wg/drafts/html/CR/semantics.html#the-html-element
 [AngularJS Scope Guide]: https://docs.angularjs.org/guide/scope
-[complete application]: https://github.com/ghoti143/MyFirstNgApp
 [run it]: http://rawgit.com/ghoti143/MyFirstNgApp/master/index.html
