@@ -179,10 +179,23 @@ $scope.archive = function() {
 
 ### Modify body
 
-The body tag needs to be told which controller to use
+Tell the framework to use the ```TodoCtrl``` to control the body's contents.
 
 ```
 <body ng-controller="TodoCtrl">
+```
+
+### Add a form to submit new todos
+
+The form's submit event is bound to ```addTodo()``` and the text input is bound to the ```todoText``` property.
+
+```
+<h2>Todo App</h2>
+<form ng-submit="addTodo()">
+  <input type="text" ng-model="todoText"  size="30"
+         placeholder="add new todo here">
+  <input class="btn-primary" type="submit" value="add">
+</form>
 ```
 
 ## 9) Et cetera
