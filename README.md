@@ -39,7 +39,7 @@
 
 ## 3) Enter AngularJS, stage right.
 
-You might see the data-require and data-semver HTML5 attributes in AngularJS examples.
+You might see the data-require and data-semver HTML5 attributes in AngularJS examples.  These exist for dependency management.
 
 ```
 <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.16/angular.js" data-semver="1.2.16"></script>
