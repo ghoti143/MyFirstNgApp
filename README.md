@@ -81,28 +81,29 @@ Most applications have a main method that instantiates and wires together the di
 ### Declarative
 The framework looks for common functional entry points and attaches code to those points.
 
-### Imparative
-The developer explicitly codes all interactions
-
+#### e.g.
 ```
 <html ng-app="myApp">
 ```
-vs. 
+```
+<button ng-click="heyThereScopeDoSomethingCool()">
+```
+
+### Imparative
+The developer explicitly codes all interactions
+
+#### e.g.
 ```
 $( document ).ready(function() {
   ...
 });
 ```
-
-```
-<button ng-click="heyThereScopeDoSomethingCool()">
-```
-vs. 
 ```
 $( '#myButton' ).click(function() {
   ...
 });
 ```
+
 
 ## 6) Create controller.
 
