@@ -104,7 +104,6 @@ $( '#myButton' ).click(function() {
 });
 ```
 
-
 ## 6) Create controller.
 
 ### Add this to the app.js file
