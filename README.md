@@ -61,7 +61,7 @@ var app = angular.module('todoApp', []);
 
 #### ng-whatchutalkinboutwillis
 Is this a valid html5 attribute?  No.  The [W3C spec] does not list ng-app as a content attribute.
-AngularJS essentially adds another layer of attributes and tags on top of HTML.
+AngularJS essentially adds another layer of attributes and tags on top of HTML.  Angular also supports ```data-ng-*``` style tags that you can use if you want the html to pass validation.
 
 
 *The below is from the [AngularJS Module Guide]*
@@ -76,7 +76,35 @@ Most applications have a main method that instantiates and wires together the di
 * The reference to myApp module in ```<html ng-app="myApp">```. This is what bootstraps the app using your module.
 * The empty array in ```angular.module('myApp', [])```. This array is the list of modules ```myApp``` depends on.
 
-## 5) Create controller.
+## 5) Commercial break: declarative vs. imparative
+
+### Declarative
+The framework looks for common functional entry points and attaches code to those points.
+
+### Imparative
+The developer explicitly codes all interactions
+
+```
+<html ng-app="myApp">
+```
+vs. 
+```
+$( document ).ready(function() {
+  ...
+});
+```
+
+```
+<button ng-click="heyThereScopeDoSomethingCool()">
+```
+vs. 
+```
+$( '#myButton' ).click(function() {
+  ...
+});
+```
+
+## 6) Create controller.
 
 ### Add this to the app.js file
 
@@ -91,7 +119,7 @@ app.controller('TodoCtrl', function($scope) {
 Scope is the glue between application controller and the view. During the template linking phase the directives set up ```$watch``` expressions on the scope. 
 The ```$watch``` allows the directives to be notified of property changes, which allows the directive to render the updated value to the DOM.
 
-## 6) Build out controller
+## 7) Build out controller
 
 *Add the following sections to the body of the TodoCtrl function*
 
@@ -141,7 +169,7 @@ $scope.archive = function() {
 };
 ```
 
-## 7) Todo with a view
+## 8) Todo with a view
 
 ### Add app.js to head
 
@@ -157,11 +185,10 @@ The body tag needs to be told which controller to use
 <body ng-controller="TodoCtrl">
 ```
 
-## 8) Et cetera
+## 9) Et cetera
 
 * Here's the [complete application]
 * You can [run it] in your browser
-
 
 [AngularJS Module Guide]: https://docs.angularjs.org/guide/module
 [Semantic Versioning]: http://semver.org/
