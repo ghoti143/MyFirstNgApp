@@ -198,6 +198,33 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 </form>
 ```
 
+### Display the todos
+
+```
+<h3>Active Todos</h3>
+<span>{{remaining()}} of {{todos.length}} remaining</span>
+[ <a href="" ng-click="archive()">archive</a> ]
+<ul class="unstyled">
+  <li ng-repeat="todo in todos">
+    <input type="checkbox" ng-model="todo.done">
+    <span class="done-{{todo.done}}">{{todo.text}}</span>
+  </li>
+</ul>
+```
+
+### Display the archived todos
+
+```
+<div ng-show="oldTodos.length > 0">
+  <h3>Archived Todos</h3>
+  <ul class="unstyled">
+    <li ng-repeat="todo in oldTodos">
+      <span>{{todo.text}}</span>
+    </li>
+  </ul>
+</div>
+```
+
 ## 9) Et cetera
 
 * Here's the [complete application]
