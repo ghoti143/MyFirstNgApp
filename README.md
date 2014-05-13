@@ -108,10 +108,18 @@ $( '#myButton' ).click(function() {
 
 ### Add this to the app.js file
 
-```js
+```
 app.controller('TodoCtrl', function($scope) {
   
 });
+```
+
+### Modify body
+
+Tell the framework to use the ```TodoCtrl``` to control the body's contents.
+
+```
+<body ng-controller="TodoCtrl">
 ```
 
 *The below is from the [AngularJS Scope Guide]*
@@ -155,34 +163,12 @@ $scope.remaining = function() {
 };
 ```
 
-### FUNC: Archive
-
-```
-$scope.archive = function() {
-  var tempTodos = $scope.todos;
-  $scope.todos = [];
-  
-  angular.forEach(tempTodos, function(todo) {
-    if (!todo.done) $scope.todos.push(todo);
-    else $scope.oldTodos.push(todo);
-  });
-};
-```
-
 ## 8) Todo with a view
 
 ### Add app.js to head
 
 ```
 <script src="app.js"></script>
-```
-
-### Modify body
-
-Tell the framework to use the ```TodoCtrl``` to control the body's contents.
-
-```
-<body ng-controller="TodoCtrl">
 ```
 
 ### Add a form to submit new todos
@@ -203,13 +189,34 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 ```
 <h3>Active Todos</h3>
 <span>{{remaining()}} of {{todos.length}} remaining</span>
-[ <a href="" ng-click="archive()">archive</a> ]
 <ul class="unstyled">
   <li ng-repeat="todo in todos">
     <input type="checkbox" ng-model="todo.done">
     <span class="done-{{todo.done}}">{{todo.text}}</span>
   </li>
 </ul>
+```
+
+## 9) Extra Credit
+
+### Add function to archive the Todos
+
+```
+$scope.archive = function() {
+  var tempTodos = $scope.todos;
+  $scope.todos = [];
+  
+  angular.forEach(tempTodos, function(todo) {
+    if (!todo.done) $scope.todos.push(todo);
+    else $scope.oldTodos.push(todo);
+  });
+};
+```
+
+### Add UI component to call archive function
+
+```
+[ <a href="" ng-click="archive()">archive</a> ]
 ```
 
 ### Display the archived todos
@@ -225,9 +232,10 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 </div>
 ```
 
-## 9) Et cetera
+## 10) Et cetera
 
 * Want to [run it] in your browser?
+* Thanks to [this tutorial] for inspiration.
 
 [AngularJS Module Guide]: https://docs.angularjs.org/guide/module
 [Semantic Versioning]: http://semver.org/
