@@ -66,15 +66,15 @@ AngularJS essentially adds another layer of attributes and tags on top of HTML. 
 
 *The below is from the [AngularJS Module Guide]*
 
-  ### What is a Module?
-  You can think of a module as a container for the different parts of your app - controllers, services, filters, directives, etc. 
+### What is a Module?
+You can think of a module as a container for the different parts of your app - controllers, services, filters, directives, etc. 
 
-  ### Why?
-  Most applications have a main method that instantiates and wires together the different parts of the application. Angular apps don't have a main method. Instead modules declaratively specify how an application should be bootstrapped.
+### Why?
+Most applications have a main method that instantiates and wires together the different parts of the application. Angular apps don't have a main method. Instead modules declaratively specify how an application should be bootstrapped.
 
-  ### Things to notice
-  * The reference to myApp module in ```<html ng-app="myApp">```. This is what bootstraps the app using your module.
-  * The empty array in ```angular.module('myApp', [])```. This array is the list of modules ```myApp``` depends on.
+### Things to notice
+* The reference to myApp module in ```<html ng-app="myApp">```. This is what bootstraps the app using your module.
+* The empty array in ```angular.module('myApp', [])```. This array is the list of modules ```myApp``` depends on.
 
 ## 5) Commercial break: declarative vs. imparative
 
