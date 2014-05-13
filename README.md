@@ -237,9 +237,14 @@ $scope.archive = function() {
 
 * Want to [run it] in your browser?
 * Thanks to [this tutorial] for inspiration.
+* Read [Pro AngularJS] on Safari Books.
+* Watch [Build a Strong AngularJS Foundation] on Safari Books.
 
 [AngularJS Module Guide]: https://docs.angularjs.org/guide/module
 [Semantic Versioning]: http://semver.org/
 [W3C spec]: http://www.w3.org/html/wg/drafts/html/CR/semantics.html#the-html-element
 [AngularJS Scope Guide]: https://docs.angularjs.org/guide/scope
 [run it]: http://rawgit.com/ghoti143/MyFirstNgApp/master/index.html
+[this tutorial]: http://todo
+[Pro AngularJS]: http://techbus.safaribooksonline.com/9781430264484
+[Build a Strong AngularJS Foundation]: http://techbus.safaribooksonline.com/video/web-design-and-development/9781491905661
