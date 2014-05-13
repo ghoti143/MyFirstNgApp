@@ -64,15 +64,15 @@ Is this a valid html5 attribute?  No.  The [W3C spec] does not list ng-app as a 
 AngularJS essentially adds another layer of attributes and tags on top of HTML.  Angular also supports ```data-ng-*``` style tags that you can use if you want the html to pass validation.
 
 
+### What is a Module?
 *The below is from the [AngularJS Module Guide]*
 
-### What is a Module?
 You can think of a module as a container for the different parts of your app - controllers, services, filters, directives, etc. 
 
-### Why?
+#### Why?
 Most applications have a main method that instantiates and wires together the different parts of the application. Angular apps don't have a main method. Instead modules declaratively specify how an application should be bootstrapped.
 
-### Things to notice
+#### Things to notice
 * The reference to myApp module in ```<html ng-app="myApp">```. This is what bootstraps the app using your module.
 * The empty array in ```angular.module('myApp', [])```. This array is the list of modules ```myApp``` depends on.
 
@@ -122,8 +122,9 @@ Tell the framework to use the ```TodoCtrl``` to control the body's contents.
 <body ng-controller="TodoCtrl">
 ```
 
-*The below is from the [AngularJS Scope Guide]*
 ### Scope as Data-Model
+*The below is from the [AngularJS Scope Guide]*
+
 Scope is the glue between application controller and the view. During the template linking phase the directives set up ```$watch``` expressions on the scope. 
 The ```$watch``` allows the directives to be notified of property changes, which allows the directive to render the updated value to the DOM.
 
