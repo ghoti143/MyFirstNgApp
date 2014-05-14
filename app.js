@@ -26,5 +26,13 @@ app.controller('TodoCtrl', function($scope) {
       todo.ach = todo.done;
     });
   };
+  
+  $scope.archivedTodos = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo) {
+      if (todo.ach) { count++ }
+    });
+    return count;
+  };
 
 });
