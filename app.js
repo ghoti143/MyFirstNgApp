@@ -2,32 +2,28 @@ var app = angular.module('todoApp', []);
 
 app.controller('TodoCtrl', function($scope) {
   $scope.todos = [
-    {text:'learn angular', done:true},
-    {text:'build an angular app', done:false}];
+    {text:'learn angular', done:true, ach: false},
+    {text:'build an angular app', done:false, ach: false}];
 
-  $scope.oldTodos = [];
   $scope.todoText = '';
 
   $scope.addTodo = function() {
-    $scope.todos.push({text:$scope.todoText, done:false});
+    $scope.todos.push({text:$scope.todoText, done:false, ach: false});
     $scope.todoText = '';
   };
 
   $scope.remaining = function() {
     var count = 0;
     angular.forEach($scope.todos, function(todo) {
-      count += todo.done ? 0 : 1;
+      if (!todo.done) { count++ }
     });
     return count;
   };
 
   $scope.archive = function() {
-    var tempTodos = $scope.todos;
-    $scope.todos = [];
     
     angular.forEach(tempTodos, function(todo) {
-      if (!todo.done) $scope.todos.push(todo);
-      else $scope.oldTodos.push(todo);
+      todo.ach = todo.done;
     });
   };
 
