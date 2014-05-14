@@ -19,7 +19,7 @@
     </form>
     
     <h3>Active Todos</h3>
-    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    <span>{{remaining()}} of {{activeTodos()}} remaining</span>
     [ <a href="" ng-click="archive()">archive</a> ]
     <ul class="unstyled">
       <li ng-repeat="todo in todos | filter:{ach: false}">
