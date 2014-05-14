@@ -22,16 +22,16 @@
     <span>{{remaining()}} of {{todos.length}} remaining</span>
     [ <a href="" ng-click="archive()">archive</a> ]
     <ul class="unstyled">
-      <li ng-repeat="todo in todos">
+      <li ng-repeat="todo in todos | filter:{done: false}">
         <input type="checkbox" ng-model="todo.done">
         <span class="done-{{todo.done}}">{{todo.text}}</span>
       </li>
     </ul>
     
-    <div ng-show="oldTodos.length > 0">
+    <div ng-show="archivedCount() > 0">
       <h3>Archived Todos</h3>
       <ul class="unstyled">
-        <li ng-repeat="todo in oldTodos">
+        <li ng-repeat="todo in todos | filter:{ach: true}">
           <span>{{todo.text}}</span>
         </li>
       </ul>
