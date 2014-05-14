@@ -22,7 +22,7 @@ app.controller('TodoCtrl', function($scope) {
 
   $scope.archive = function() {
     
-    angular.forEach(tempTodos, function(todo) {
+    angular.forEach($scope.todos, function(todo) {
       todo.ach = todo.done;
     });
   };
