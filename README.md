@@ -136,10 +136,9 @@ The ```$watch``` allows the directives to be notified of property changes, which
 
 ```
 $scope.todos = [
-  {text:'learn angular', done:true},
-  {text:'build an angular app', done:false}];
+  {text:'learn angular', done:true, ach: false},
+  {text:'build an angular app', done:false, ach: false}];
 
-$scope.oldTodos = [];
 $scope.todoText = '';
 ```
 
@@ -147,18 +146,30 @@ $scope.todoText = '';
 
 ```
 $scope.addTodo = function() {
-  $scope.todos.push({text:$scope.todoText, done:false});
+  $scope.todos.push({text:$scope.todoText, done:false, ach: false});
   $scope.todoText = '';
 };
 ```
 
-### FUNC: Calculate remaining todos
+### FUNC: Count remaining todos
 
 ```
 $scope.remaining = function() {
   var count = 0;
   angular.forEach($scope.todos, function(todo) {
-    count += todo.done ? 0 : 1;
+    if (!todo.done) { count++ }
+  });
+  return count;
+};
+```
+
+### FUNC: Count active todos
+
+```
+$scope.activeTodos = function() {
+  var count = 0;
+  angular.forEach($scope.todos, function(todo) {
+    if (!todo.ach) { count++ }
   });
   return count;
 };
@@ -189,9 +200,10 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 
 ```
 <h3>Active Todos</h3>
-<span>{{remaining()}} of {{todos.length}} remaining</span>
+<span>{{remaining()}} of {{activeTodos()}} remaining</span>
+[ <a href="" ng-click="archive()">archive</a> ]
 <ul class="unstyled">
-  <li ng-repeat="todo in todos">
+  <li ng-repeat="todo in todos | filter:{ach: false}">
     <input type="checkbox" ng-model="todo.done">
     <span class="done-{{todo.done}}">{{todo.text}}</span>
   </li>
@@ -204,13 +216,17 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 
 ```
 $scope.archive = function() {
-  var tempTodos = $scope.todos;
-  $scope.todos = [];
-  
-  angular.forEach(tempTodos, function(todo) {
-    if (!todo.done) $scope.todos.push(todo);
-    else $scope.oldTodos.push(todo);
+  angular.forEach($scope.todos, function(todo) {
+    todo.ach = todo.done;
   });
+};
+
+$scope.archivedTodos = function() {
+  var count = 0;
+  angular.forEach($scope.todos, function(todo) {
+    if (todo.ach) { count++ }
+  });
+  return count;
 };
 ```
 
@@ -223,10 +239,10 @@ $scope.archive = function() {
 ### Display the archived todos
 
 ```
-<div ng-show="oldTodos.length > 0">
+<div ng-show="archivedTodos() > 0">
   <h3>Archived Todos</h3>
   <ul class="unstyled">
-    <li ng-repeat="todo in oldTodos">
+    <li ng-repeat="todo in todos | filter:{ach: true}">
       <span>{{todo.text}}</span>
     </li>
   </ul>
