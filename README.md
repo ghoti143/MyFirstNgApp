@@ -212,7 +212,7 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 
 ## 9) Extra Credit
 
-### Add function to archive the Todos
+### Add functions to archive and count
 
 ```
 $scope.archive = function() {
