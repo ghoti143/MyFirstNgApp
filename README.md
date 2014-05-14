@@ -190,8 +190,8 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 <h2>Todo App</h2>
 <form ng-submit="addTodo()">
   <input type="text" ng-model="todoText"  size="30"
-         placeholder="add new todo here">
-  <input type="submit" value="add">
+         placeholder="add new todo here" />
+  <input type="submit" value="add" />
 </form>
 ```
 
@@ -202,7 +202,7 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 <span>{{remaining()}} of {{activeTodos()}} remaining</span>
 <ul>
   <li ng-repeat="todo in todos | filter:{ach: false}">
-    <input type="checkbox" ng-model="todo.done">
+    <input type="checkbox" ng-model="todo.done" />
     <span class="done-{{todo.done}}">{{todo.text}}</span>
   </li>
 </ul>
