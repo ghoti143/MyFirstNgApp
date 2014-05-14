@@ -191,7 +191,7 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 <form ng-submit="addTodo()">
   <input type="text" ng-model="todoText"  size="30"
          placeholder="add new todo here">
-  <input class="btn-primary" type="submit" value="add">
+  <input type="submit" value="add">
 </form>
 ```
 
