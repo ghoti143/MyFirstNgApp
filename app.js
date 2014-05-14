@@ -20,8 +20,15 @@ app.controller('TodoCtrl', function($scope) {
     return count;
   };
 
+  $scope.activeTodos = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo) {
+      if (!todo.ach) { count++ }
+    });
+    return count;
+  };
+
   $scope.archive = function() {
-    
     angular.forEach($scope.todos, function(todo) {
       todo.ach = todo.done;
     });
