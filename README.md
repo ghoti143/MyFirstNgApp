@@ -200,7 +200,6 @@ The form's submit event is bound to ```addTodo()``` and the text input is bound 
 ```
 <h3>Active Todos</h3>
 <span>{{remaining()}} of {{activeTodos()}} remaining</span>
-[ <a href="" ng-click="archive()">archive</a> ]
 <ul class="unstyled">
   <li ng-repeat="todo in todos | filter:{ach: false}">
     <input type="checkbox" ng-model="todo.done">
