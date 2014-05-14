@@ -239,7 +239,7 @@ $scope.archivedTodos = function() {
 ```
 <div ng-show="archivedTodos() > 0">
   <h3>Archived Todos</h3>
-  <ul class="unstyled">
+  <ul>
     <li ng-repeat="todo in todos | filter:{ach: true}">
       <span>{{todo.text}}</span>
     </li>
