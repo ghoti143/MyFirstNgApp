@@ -49,6 +49,11 @@ You might see the data-require and data-semver HTML5 attributes in AngularJS exa
 
 ### Add file: app.js
 
+#### Add reference to app.js
+```
+<script src="app.js"></script>
+```
+
 #### Create a new Angular module
 ```
 var app = angular.module('todoApp', []);
