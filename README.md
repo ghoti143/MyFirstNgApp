@@ -182,12 +182,6 @@ $scope.activeTodos = function() {
 
 ## 8) Todo with a view
 
-### Add app.js to head
-
-```
-<script src="app.js"></script>
-```
-
 ### Add a form to submit new todos
 
 The form's submit event is bound to ```addTodo()``` and the text input is bound to the ```todoText``` property.
