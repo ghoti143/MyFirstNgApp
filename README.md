@@ -247,6 +247,28 @@ $scope.archivedTodos = function() {
 </div>
 ```
 
+### Add a custom filter
+
+```
+app.filter("archived", function () {
+  return function (items, isArchived) {
+    var resultArr = [];
+    angular.forEach(items, function (item) {
+      if (item.ach == isArchived) {
+        resultArr.push(item);
+      }
+    });
+    return resultArr;
+  }
+});
+```
+
+### Update view to use custom filter
+
+```
+<li ng-repeat="todo in todos | archived:false">
+```
+
 ## 10) Et cetera
 
 * Want to [run it] in your browser?
