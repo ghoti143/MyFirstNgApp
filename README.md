@@ -1,7 +1,7 @@
 # AngularJS MVC TODO
-*http://github.com/ghoti143/MyFirstNgApp*
 
 ### Build a simple AngularJS app from scratch
+*http://github.com/ghoti143/MyFirstNgApp*
 
 ## 1) Start with bare html file.
 
