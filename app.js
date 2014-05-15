@@ -1,5 +1,17 @@
 var app = angular.module('todoApp', []);
 
+app.filter("archived", function () {
+    return function (items, isArchived) {
+        var resultArr = [];
+        angular.forEach(items, function (item) {
+            if (item.ach == isArchived) {
+                resultArr.push(item);
+            }
+        });
+        return resultArr;
+    }
+});
+
 app.controller('TodoCtrl', function($scope) {
   $scope.todos = [
     {text:'learn angular', done:true, ach: false},
